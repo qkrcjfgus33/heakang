@@ -1,0 +1,64 @@
+<style>
+	.heakangc>.frame-block{
+		height: 115px;
+		display: block;
+		width: 100%;
+	}
+	.heakangc>.content-container{
+		position: relative;
+		width: 1000px;
+		margin: 30px auto 0 auto;
+	}
+	.content-container .side-menu-container{
+		position: relative;
+		width: 200px;
+		display: inline-block;
+	}
+
+	.content-container .content-wrap{
+		position: relative;
+		width: 700px;
+		display: inline-block;
+  		vertical-align: top;
+  		margin-left:90px;
+	}
+
+	.content-container .content{
+		margin: 50px 0px;
+	}
+
+	.only-content{
+		width:1000px;
+		margin: 20px auto;
+		display: block;
+	}
+</style>
+
+<aside class="frame-block"></aside>
+
+<div class="menu-title-container">
+	<include target="menu-title" />
+</div>
+
+<!--@if($onlyContent)-->
+<div class="only-content">
+{$content}
+</div>
+<!--@else-->
+
+
+<div class="content-container">
+	<div class="side-menu-container">
+		<include target="side-menus" />
+	</div>
+
+	<section class="content-wrap">
+		<section class="content-position">
+			<include target="content-position" />
+		</section>
+		<section class="content">
+			{$content}
+		</section>
+	</section>
+</div>
+<!--@end-->

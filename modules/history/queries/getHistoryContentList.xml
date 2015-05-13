@@ -1,0 +1,14 @@
+<query id="getHistoryContentList" action="select">
+    <tables>
+        <table name="historys" />
+    </tables>
+    <columns>
+        <column name="*" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" />
+    </conditions>
+    <navigation>
+        <index var="history_date" default="history_date" order="asc" />
+    </navigation>
+</query>

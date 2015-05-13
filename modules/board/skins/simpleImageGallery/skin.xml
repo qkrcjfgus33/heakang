@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">simple image gallery</title>
+    <description xml:lang="ko">simple image gallery</description>
+    <version>1.0</version>
+    <date>2015-04-01</date>
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+    <license>LGPL v2</license>
+    <extra_vars>
+        <var name="title_image" type="image">
+            <title xml:lang="ko">게시판 제목 이미지</title>
+			<description xml:lang="ko">작성하면 화면에 표시 됨</description>
+        </var>
+        <var name="title_alt" type="text">
+            <title xml:lang="ko">게시판 제목 이미지 alt</title>
+			<description xml:lang="ko">게시판 제목 이미지 대체 텍스트</description>
+        </var>
+    </extra_vars>
+</skin>
+

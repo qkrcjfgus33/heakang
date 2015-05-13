@@ -1,0 +1,36 @@
+<!--#include("_header.html")-->
+
+<h2><!--@if(!$history_info->history_srl)-->History Insert<!--@else-->History Update<!--@end--></h2>
+
+<form action="./" method="post" onsubmit="return procFilter(this, content_insert);">
+<input type="hidden" name="module_srl" value="{$module_srl}" />
+<input type="hidden" name="regdate" value="{date("Ymd")}" />
+<input type="hidden" name="history_srl" value="{$history_srl}" />
+
+<table border="0" class="historyTable">
+	<tr>
+		<th>History</th>
+		<th>{$lang->history_infomation}</th>
+	</tr>
+	<tr>
+		<th>{$lang->category}</th>
+		<td class="left">{$module_info->browser_title}</td>
+	</tr>
+	<tr>
+		<th>{$lang->history_date}</th>
+		<td class="left"><input type="date" name="history_date" value="{$history_info->history_date}" /></td>
+	</tr>
+	<tr>
+		<th>{$lang->history_decs}</th>
+		<td class="left"><input type="text" name="history_decs" value="{$history_info->history_decs}" size="40" /></td>
+	</tr>
+</table>
+
+<div class="btn">
+	<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span> 
+	<span class="button red strong"><input type="submit" value="{$lang->cmd_input}"/></span> 
+</div>
+
+</form>
+
+<!--#include("_footer.html")-->

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="1.0">
+    <title xml:lang="ko">iconic 애드온</title>
+    <description xml:lang="ko">
+        iconic 애드온 입니다.
+    </description>
+    <version>1.0</version>
+    <date>2015-03-16</date>
+
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+</addon>

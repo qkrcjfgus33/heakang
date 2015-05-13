@@ -1,0 +1,31 @@
+<style>
+	.menu-title-container{
+		width: 100%;
+		background: url('{$layout_info -> path}petten/footer_lodyas.png') repeat;	
+		box-shadow: 0px 0px 1px 0px #888888;
+	}
+	.menu-title-container .menu-title{
+		display: block;
+		width: 1000px;
+		height: 110px;
+		margin: 0 auto;
+		line-height: 110px;
+		color: white;
+		font-size: 45px;
+		font-weight: bold;
+		text-indent: 50px;
+	}
+</style>
+<!--@if($customTitle)-->
+<section class="menu-title-container">
+	<span class="menu-title">
+		{$customTitle}
+	</span>
+</section>
+<!--@else-->
+<section class="menu-title-container" loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']">
+	<span class="menu-title" loop="$val1['list']=>$key2,$val2" cond="$val2['selected']">
+		{$val2['text']}
+	</span>
+</section>
+<!--@end-->

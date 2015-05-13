@@ -1,0 +1,42 @@
+<style>
+	.head-links{
+		display: inline;
+		line-height: 60px;
+	}
+
+	.head-links>li{
+		display: inline;
+		border-width: 0px;
+		border-color: rgb(35, 145, 182);
+		border-style: dotted;
+		padding: 0px 5px;
+		font-size: 11px;
+	}
+
+	.head-links>li:first-child{
+		border-left-width: 0px;
+	}
+
+	.head-links>li:last-child{
+		border-right-width: 0px;
+	}
+
+	.head-links .head-link{
+		text-decoration: none;
+		color: black;
+	}
+
+	.head-links .head-link:hover{
+		color: rgb(35, 145, 182);
+		font-weight: bold;
+	}
+
+	
+</style>
+
+<ul class="head-links">
+	<li loop="$head_menu->list=>$key1,$val1" class="active"|cond="$val1['selected']">
+		<a href="{$val1['href']}" class="head-link" target="_blank"|cond="$val1['open_window']=='Y'">{trim($val1['text'])}</a>
+	</li>
+	<img class="zbxe_widget_output" widget="login_info" skin="heakangc" />
+</ul>

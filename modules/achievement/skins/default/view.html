@@ -1,0 +1,81 @@
+<style>
+	.achievement-photos{
+	}
+
+	.achievement-photos .achievement-photo-container{
+		display: inline-block;
+	}
+
+	.achievement-photos .achievement-photo{
+		width: 250px;
+		margin: 0 auto;
+		display: block;
+		padding: 10px;
+		padding-bottom: 40px;
+		box-shadow: -2px 0px 5px 0px #666;
+		margin-left: 50px;
+		margin-bottom: 50px;
+		background: url('./layouts/heakangc/petten/crossword.png') repeat;
+	}
+	.achievement_content .achievementTable.list {
+		width: 500px; 
+		margin: 0 auto 50px auto;
+
+	}
+
+</style>
+<!--#include("_header.html")-->
+
+<h1 class="page-title odd">{$achievement_info->achievement_title}</h1>
+
+{@ $achieve_photo_list = $achievement_info->achieve_photo_list}
+<section class="achievement-photos">
+<!--@foreach($achieve_photo_list as $val)-->
+<div class="achievement-photo-container">
+	<a href="{$val->uploaded_filename}" target="_blank">
+	<img class="achievement-photo" src="{$val->uploaded_filename}"/>
+	</a>
+</div>
+<!--@end-->
+</section>
+
+<table border="0" class="achievementTable list">
+	<tr>
+		<th>{$lang->achievement_title}</th>
+		<td>{$achievement_info->achievement_title}</td>
+	</tr>
+	<tr>
+		<th>{$lang->achieve_class_title}</th>
+		<td>{$achievement_info->achieve_class_title}</td>
+	</tr>
+	<tr>
+		<th>{$lang->achievement_date}</th>
+		<td>{$achievement_info->achievement_start_date} - {$achievement_info->achievement_end_date}</td>
+	</tr>
+	<tr>
+		<th>{$lang->achievement_position}</th>
+		<td>{$achievement_info->achievement_position}</td>
+	</tr>
+	<tr>
+		<th>{$lang->achievement_owner}</th>
+		<td>{$achievement_info->achievement_owner}</td>
+	</tr>
+	<tr>
+		<th>{$lang->achievement_woncheongsa}</th>
+		<td>{$achievement_info->achievement_woncheongsa}</td>
+	</tr>
+</table>
+
+<!-- 버튼 -->
+<div class="btn" cond="$grant->write">
+	<!--
+	<a cond="$grant->write" href="{getUrl('act','dispAchievementContentWrite','achievement_srl',$achievement_info->achievement_srl, 'achievement_new', 'false')}" class="button red" title="{$lang->cmd_modify}"><span>{$lang->cmd_modify}</span></a>
+-->
+<!--수정 버튼 문제있어서 삭제-->
+	<a cond="$grant->delete" href="{getUrl('act','dispAchievementContentDelete','achievement_srl', $achievement_info->achievement_srl,'achievement_title',$achievement_info->achievement_title)}" class="button black" title="{$lang->cmd_delete}"><span>{$lang->cmd_delete}</span></a>
+</div>
+
+<h2>LIST</h2>
+<!--#include("list.html")-->
+
+<!--#include("_footer.html")-->

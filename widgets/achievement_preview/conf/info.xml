@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+    <title xml:lang="ko">achievement_preview</title>
+    <description xml:lang="ko">achievement를 출력하는 위젯</description>
+    <version>0.1</version>
+    <date>2015-04-04</date>
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+    <extra_vars>
+        <var id="selected_module_srl">
+            <type>mid</type>
+            <description xml:lang="ko">게시판을 선택하세요</description>
+			<name xml:lang="ko">출력 게시판</name>
+		</var>
+	</extra_vars>
+</widget>

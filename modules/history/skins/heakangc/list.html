@@ -1,0 +1,76 @@
+<!--#include("_header.html")-->
+
+<style>
+	.history-container {
+
+	}
+	.history-container .year{
+		display: inline-block;
+		vertical-align: top;
+		font-size: 50px;
+		margin-bottom: 20px;
+		font-style: italic;
+		font-weight: bolder;
+		font-family:Impact, Charcoal, sans-serif; 
+	}
+	.history-container .date-decs-container{
+		display: block;
+		font-size: 15px;
+		margin-bottom: 100px;
+	}
+	.history-container .date-decs{
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		border-bottom: rgb(166, 216, 149) 1px dotted;
+		text-indent: 15px;
+	}
+	.history-container .date{
+		font-weight: bolder;
+	}
+	.history-container .decs{
+		margin-left: 20px;
+	}
+</style>
+<!-- 버튼 -->
+<div cond="$grant->write" class="btn">
+	<a href="{getUrl('act','dispHistoryContentWrite')}" class="button red" title="{$lang->cmd_input}"><span>{$lang->cmd_input}</span></a>
+</div>
+
+<section class="history-container">
+	{@ $current_year=0}
+	<!--@foreach($history_list as $no => $history_info)-->
+		{@
+			$history_date = explode('-', $history_info->history_date);
+			$history_y = $history_date[0];
+			$history_m = $history_date[1];
+			$history_d = $history_date[2];
+		}
+		
+		
+		<!--@if($current_year != $history_y)-->
+			<!--@if($current_year != 0)-->
+			</div>
+			<!--@end-->
+			<div class="year">
+				<span>{$history_y}</span>
+			</div>
+			<div class="date-decs-container">
+			{@ $current_year=$history_y}
+		<!--@end-->
+			
+			<div class="date-decs">
+				<span class="date">{$history_m}/{$history_d}</span>
+				<span class="decs">{$history_info->history_decs}</span>
+				<a cond="$grant->delete" href="{getUrl('act','dispHistoryContentWrite','history_srl',$history_info->history_srl)}" class="button red" title="{$lang->cmd_modify}"><span>{$lang->cmd_modify}</span></a>
+				<a cond="$grant->write" href="{getUrl('act','dispHistoryContentDelete','history_srl', $history_info->history_srl,'history_date',$history_info->history_date,'history_decs',$history_info->history_decs)}" class="button black" title="{$lang->cmd_delete}"><span>{$lang->cmd_delete}</span></a>
+			</div>
+	<!--@end-->
+	</div>
+</section>
+
+<!-- 버튼 -->
+<div cond="$grant->write" class="btn">
+	<a href="{getUrl('act','dispHistoryContentWrite')}" class="button red" title="{$lang->cmd_input}"><span>{$lang->cmd_input}</span></a>
+</div>
+
+<!--#include("_footer.html")-->

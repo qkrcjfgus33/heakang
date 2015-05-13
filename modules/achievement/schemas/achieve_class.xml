@@ -1,0 +1,4 @@
+<table name="achieve_class">
+    <column name="achievement_class_srl" type="number" size="11" notnull="notnull" auto_increment="auto_increment" primary_key="primary_key" />
+    <column name="class_title" type="varchar" size="20" />
+</table>

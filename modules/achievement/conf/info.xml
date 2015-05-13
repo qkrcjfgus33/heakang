@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">achievement</title>
+    <description xml:lang="ko">achievement</description>
+    <version>1.0</version>
+    <date>2015-04-02</date>
+    <category>service</category>
+
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+</module>

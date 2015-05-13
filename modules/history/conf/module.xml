@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants>
+        <grant name="list" default="guest">
+            <title xml:lang="ko">목록</title>
+        </grant>
+        <grant name="view" default="guest">
+            <title xml:lang="ko">열람</title>
+        </grant>
+        <grant name="write" default="guest">
+            <title xml:lang="ko">입력</title>
+        </grant>
+        <grant name="delete" default="guest">
+            <title xml:lang="ko">삭제</title>
+        </grant>
+    </grants>
+    <permissions>
+        <permission action="dispHistoryAdminList" target="manager" />
+        <permission action="dispHistoryAdminInfoHistory" target="manager" />
+        <permission action="dispHistoryAdminInsertHistory" target="manager" />
+        <permission action="dispHistoryAdminDeleteHistory" target="manager" />
+        <permission action="dispHistoryAdminGrantInfo" target="manager" />
+        <permission action="dispHistoryAdminSkinInfo" target="manager" />
+ 
+        <permission action="procHistoryAdminInsertHistory" target="manager" />
+        <permission action="procHistoryAdminDeleteHistory" target="manager" />
+    </permissions>
+ 
+    <actions>
+        <action name="dispHistoryContentList" type="view" index="true" />
+        <action name="dispHistoryContentView" type="view" />
+        <action name="dispHistoryContentWrite" type="view" />
+        <action name="dispHistoryContentDelete" type="view" />
+        <action name="dispHistoryMessage" type="view" />
+ 
+        <action name="procHistoryContentWrite" type="controller" />
+        <action name="procHistoryContentDelete" type="controller" />
+ 
+        <action name="dispHistoryAdminList" type="view" standalone="true" admin_index="true" />
+        <action name="dispHistoryAdminInfoHistory" type="view" standalone="true" />
+        <action name="dispHistoryAdminInsertHistory" type="view" standalone="true" />
+        <action name="dispHistoryAdminDeleteHistory" type="view" standalone="true" />
+        <action name="dispHistoryAdminGrantInfo" type="view" standalone="true" />
+        <action name="dispHistoryAdminSkinInfo" type="view" standalone="true" />
+ 
+        <action name="procHistoryAdminInsertHistory" type="controller" standalone="true" />
+        <action name="procHistoryAdminDeleteHistory" type="controller" standalone="true" />
+    </actions>
+</module>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <grants>
+        <grant name="list" default="guest">
+            <title xml:lang="ko">목록</title>
+        </grant>
+        <grant name="view" default="guest">
+            <title xml:lang="ko">열람</title>
+        </grant>
+        <grant name="write" default="guest">
+            <title xml:lang="ko">입력</title>
+        </grant>
+        <grant name="delete" default="guest">
+            <title xml:lang="ko">삭제</title>
+        </grant>
+	</grants>
+    <permissions>
+        <permission action="dispAchievementAdminList" target="manager" />
+        <permission action="dispAchievementAdminInfoAchievement" target="manager" />
+        <permission action="dispAchievementAdminInsertAchievement" target="manager" />
+        <permission action="dispAchievementAdminDeleteAchievement" target="manager" />
+        <permission action="dispAchievementAdminGrantInfo" target="manager" />
+        <permission action="dispAchievementAdminSkinInfo" target="manager" />
+
+        <permission action="procAchievementAdminInsertAchievement" target="manager" />
+        <permission action="procAchievementAdminDeleteAchievement" target="manager" />
+    </permissions>
+
+	<actions>
+		<action name="dispAchievementContentList" type="view" index="true" />
+		<action name="dispAchievementContentView" type="view" />
+		<action name="dispAchievementContentWrite" type="view" />
+		<action name="dispAchievementContentDelete" type="view" />
+		<action name="dispAchievementMessage" type="view" />
+
+		<action name="procAchievementContentWrite" type="controller" />
+		<action name="procAchievementContentDelete" type="controller" />
+
+		<action name="dispAchievementAdminList" type="view" standalone="true" admin_index="true" />
+		<action name="dispAchievementAdminInfoAchievement" type="view" standalone="true" />
+		<action name="dispAchievementAdminInsertAchievement" type="view" standalone="true" />
+		<action name="dispAchievementAdminDeleteAchievement" type="view" standalone="true" />
+		<action name="dispAchievementAdminGrantInfo" type="view" standalone="true" />
+		<action name="dispAchievementAdminSkinInfo" type="view" standalone="true" />
+
+		<action name="procAchievementAdminInsertAchievement" type="controller" standalone="true" />
+		<action name="procAchievementAdminDeleteAchievement" type="controller" standalone="true" />
+    </actions>
+</module>

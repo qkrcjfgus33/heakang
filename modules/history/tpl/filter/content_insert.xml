@@ -1,0 +1,9 @@
+<filter name="content_insert" module="history" act="procHistoryContentWrite" confirm_msg_code="confirm_submit">
+  <form>
+  </form>
+  <parameter />
+  <response callback_func="completeContentInsert">
+     <tag name="error" />
+     <tag name="message" />
+  </response>
+</filter>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module version="0.2">
+	<title xml:lang="ko">폴더</title>
+	<description xml:lang="ko">폴더모듈</description>
+	<version>1.0</version>
+	<category>service</category>
+	<date>2015-05-12</date>
+	<license link="http://licenseurl.com">FREE</license>
+	<author email_address="qkrcjfgus3@gmail.com">
+		<name xml:lang="ko">vomvoru</name>
+	</author>
+</module>

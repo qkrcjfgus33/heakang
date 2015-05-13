@@ -1,0 +1,24 @@
+<!--#include("_header.html")-->
+
+<h2>History View : {$history_info->history_title}</h2>
+
+<!-- 도서 정보 -->
+<table border="0" class="historyTable">
+	<tr>
+		<th>{$lang->history_date}</th>
+		<th>{$lang->history_decs}</th>
+	</tr>
+	<tr>
+		<td>{$history_info->history_date}</td>
+		<td>{$history_info->history_decs}</td>
+	</tr>
+</table>
+
+<!-- 버튼 -->
+<div class="btn">
+	<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span> 
+	<a href="{getUrl('act','dispHistoryContentWrite','history_srl',$history_info->history_srl)}" class="button red" title="{$lang->cmd_modify}"><span>{$lang->cmd_modify}</span></a>
+	<a href="{getUrl('act','dispHistoryContentDelete','history_srl', $history_info->history_srl,'history_title',$history_info->history_title)}" class="button black" title="{$lang->cmd_delete}"><span>{$lang->cmd_delete}</span></a>
+</div>
+
+<!--#include("_footer.html")-->

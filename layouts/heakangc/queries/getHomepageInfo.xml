@@ -1,0 +1,25 @@
+<query id="getHomepageInfo" action="select">
+     <tables>
+        <table name="sites" alias="sites" />
+            <table name="modules" alias="modules" type="left join">
+                <conditions>
+                    <condition operation="equal" column="sites.index_module_srl" default="modules.module_srl" notnull="notnull" pipe="and" />
+                </conditions>
+            </table>
+            <table name="menu" alias="menu" type="left join">
+                <conditions>
+                    <condition operation="equal" column="menu.menu_srl" default="modules.menu_srl" notnull="notnull" pipe="and" />
+                </conditions>
+            </table>
+    </tables>
+   
+    <columns>
+        <column name="sites.domain" alias="domain" />
+        <column name="modules.module_srl" alias="module_srl" />
+        <column name="modules.mid" alias="mid" />
+        <column name="modules.browser_title" alias="browser_title" />
+        <column name="menu.menu_srl" alias="menu_srl" />
+        <column name="menu.title" alias="title" />
+    </columns>
+   
+</query>

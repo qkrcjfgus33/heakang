@@ -1,0 +1,43 @@
+<!--#include("_header.html")-->
+
+<h2>History List : {$module_info->browser_title}</h2>
+
+<!-- 목록 -->
+<table border="0" class="historyTable">
+	<thead>
+		<tr>
+			<th>{$lang->history_date}</th>
+			<th>{$lang->history_decs}</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<!--@foreach($history_list as $no => $history_info)-->
+		<tr>
+			<td>{$history_info->history_date}</td>
+			<td><a href="{getUrl('history_srl', $history_info->history_srl,'act','dispHistoryContentView')}">{$history_info->history_decs}</a></td>
+		</tr>
+	<!--@end-->
+	</tbody>
+</table>
+
+<!-- 버튼 -->
+<div class="btn">
+	<a href="{getUrl('','mid',$mid)}" class="button green" title="{$lang->cmd_list}"><span>{$lang->cmd_list}</span></a>
+	<a href="{getUrl('act','dispHistoryContentWrite')}" class="button red" title="{$lang->cmd_input}"><span>{$lang->cmd_input}</span></a>
+</div>
+
+<!-- 페이지 네비게이션 -->
+<div class="pagination a1">
+    <a href="{getUrl('page','','module_srl','')}" class="prevEnd">{$lang->first_page}</a> 
+    <!--@while($page_no = $page_navigation->getNextPage())-->
+        <!--@if($page == $page_no)-->
+            <strong>{$page_no}</strong> 
+        <!--@else-->
+            <a href="{getUrl('page',$page_no,'module_srl','')}">{$page_no}</a> 
+        <!--@end-->
+    <!--@end-->
+    <a href="{getUrl('page',$page_navigation->last_page,'module_srl','')}" class="nextEnd">{$lang->last_page}</a>
+</div>
+
+<!--#include("_footer.html")-->

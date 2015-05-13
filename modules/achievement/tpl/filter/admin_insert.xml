@@ -1,0 +1,13 @@
+<filter name="admin_insert" module="achievement" act="procAchievementAdminInsertAchievement" confirm_msg_code="confirm_submit">
+    <form>
+        
+    </form>
+	<response callback_func="completeAdminInsertAchievement">
+        <tag name="error" />
+        <tag name="message" />
+        <tag name="module" />
+        <tag name="act" />
+        <tag name="page" />
+        <tag name="module_srl" />
+    </response>
+</filter>

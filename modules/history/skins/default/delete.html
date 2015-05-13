@@ -1,0 +1,27 @@
+<!--#include("_header.html")-->
+
+<h2>{$lang->confirm_delete}</h2>
+
+<form action="./" method="get">
+<input type="hidden" name="history_srl" value="{$history_srl}" />
+
+<table border="0" class="historyTable">
+    <tr>
+        <th>{$lang->history_no}</th>
+        <td>{$history_srl}</td>
+    </tr>
+	<tr>
+		<th>{$lang->history_title}</th>
+		<td>{$history_title}</td>
+    </tr>
+    <tr>
+        <th colspan="2" class="button">
+			<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span>
+			<span class="button black strong"><input type="submit" value="{$lang->cmd_delete}" /></span>
+        </th>
+    </tr>
+</table>
+
+</form>
+
+<!--#include("_footer.html")-->

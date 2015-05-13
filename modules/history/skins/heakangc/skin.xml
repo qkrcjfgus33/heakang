@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+    <title xml:lang="ko">History heakangc Skin</title>
+    <description xml:lang="ko">
+        연혁 페이지 heakangc스킨
+    </description>
+    <version>0.1</version>
+    <date>2015-04-01</date>
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+    <license>GPL</license>
+</skin>
+

@@ -1,0 +1,27 @@
+<!--#include("_header.html")-->
+
+<h2>{$lang->confirm_delete}</h2>
+
+<form action="./" method="get" onsubmit="return procFilter(this, content_delete)">
+<input type="hidden" name="achievement_srl" value="{$achievement_srl}" />
+
+<table border="0" class="achievementTable">
+    <tr>
+        <th>{$lang->achievement_no}</th>
+        <td>{$achievement_srl}</td>
+    </tr>
+	<tr>
+		<th>{$lang->achievement_title}</th>
+		<td>{$achievement_title}</td>
+    </tr>
+    <tr>
+        <th colspan="2" class="button">
+			<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span>
+			<span class="button black strong"><input type="submit" value="{$lang->cmd_delete}" /></span>
+        </th>
+    </tr>
+</table>
+
+</form>
+
+<!--#include("_footer.html")-->

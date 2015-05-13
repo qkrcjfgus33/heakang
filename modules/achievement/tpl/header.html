@@ -1,0 +1,26 @@
+<h3 class="xeAdmin"><span class="gray">{$lang->achievement_management}</span></h3>
+
+<div class="infoText">{nl2br($lang->about_achievement)}</div>
+
+<!--@if($module_info)-->
+<div class="header4">
+
+    <!--@if($module_info->mid)-->
+    <h4 class="xeAdmin">{$module_info->mid} <span class="vr">|</span> <a href="{getSiteUrl($module_info->domain,'','mid',$module_info->mid)}" onclick="window.open(this.href); return false;" class="view">View</a></h4>
+    <!--@end-->
+
+    <ul class="localNavigation">
+        <!--@if($module=='admin')-->
+        <li <!--@if($act=='dispAchievementAdminList')-->class="on"<!--@end-->><a href="{getUrl('act','dispAchievementAdminList','module_srl','')}">{$lang->cmd_achievement_list}</a></li>
+        <!--@else-->
+        <li><a href="{getUrl('act','')}">{$lang->cmd_back}</a></li>
+        <!--@end-->
+        <li <!--@if($act=='dispAchievementAdminInfoAchievement'||$act=='dispAchievementAdminInsertAchievement')-->class="on"<!--@end-->><a href="{getUrl('act','dispAchievementAdminInsertAchievement')}"><!--@if($module_srl)-->{$lang->cmd_achievement_config}<!--@else-->{$lang->cmd_achievement_insert}<!--@end--></a></li>
+
+        <!--@if($module_srl)-->
+         <li <!--@if($act=='dispAchievementAdminGrantInfo')-->class="on"<!--@end-->><a href="{getUrl('act','dispAchievementAdminGrantInfo')}">{$lang->cmd_manage_grant}</a></li>
+        <li <!--@if($act=='dispAchievementAdminSkinInfo')-->class="on"<!--@end-->><a href="{getUrl('act','dispAchievementAdminSkinInfo')}">{$lang->cmd_manage_skin}</a></li>
+		<!--@end-->
+    </ul>
+</div>
+<!--@end-->

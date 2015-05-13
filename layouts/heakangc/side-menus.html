@@ -1,0 +1,95 @@
+<style>
+	.side-menus{
+		padding: 0px;
+		margin: 0px;
+	}
+
+	.side-menus li{
+		list-style: none;
+	}
+
+	.side-menus, .side-menus ul{
+		padding: 0px;
+	}
+
+	.side-menus a{
+		text-decoration: none;
+		color: #666;
+	}
+
+	.side-menus>li{
+
+	}
+
+	.side-menus>li>a{
+		display: block;
+		width: 100%;
+		font-size: 30px;
+		font-weight: bold;
+		/*box-shadow:10px 0px 20px 0px rgb(35, 145, 182) inset;*/
+		border-left: rgb(35, 145, 182) 20px solid;
+		padding: 30px 0px 20px 0px;
+		text-indent: 20px;
+	}
+
+	.side-menus .sub-menus{
+		padding-top: 10px;
+	}
+
+	.side-menus .sub-menus>li:first-child{
+		
+	}
+
+	.side-menus .sub-menus>li{
+		height: 60px;
+		line-height: 60px;
+		font-size: 17px;
+		border-right: #ddd 1px solid;
+		font-weight: bold;
+
+		padding-left: 20px;
+	}
+
+	.side-menus .sub-menus>li.active{
+		border-right: rgba(0,0,0,0) 1px solid;
+		box-shadow: -2px 0px 2px 0px #666;
+	}
+
+	.side-menus .sub-menus>li>a{
+		
+	}
+
+	.side-menus .sub-menus>li.active>a{
+		
+	}
+
+	.side-menus .sub-menus>li>a>.icon{
+  		vertical-align: middle;
+  		color: rgb(203, 228, 237);
+  		margin: 0 10px 0 0;
+  		font-size: 30%;
+	}
+
+	.side-menus .sub-menus>.active>a{
+  		color: rgb(35, 145, 182);
+	}
+
+	.side-menus .sub-menus>.active>a>.icon{
+  		vertical-align: middle;
+  		color: rgb(35, 145, 182);
+  		margin: 0 10px 0 0;
+  		font-size: 30%;
+	}
+</style>
+<ul class="side-menus">
+	<li loop="$main_menu->list=>$key1,$val1" cond="$val1['selected']">
+		<a>{$val1['text']}</a>
+		<ul cond="$val1['list']" class="sub-menus">
+			<li loop="$val1['list']=>$key2,$val2" class="active"|cond="$val2['selected']">
+				<a href="{$val2['href']}" target="_blank"|cond="$val2['open_window']=='Y'">
+					<span class="oi icon" data-glyph="caret-right"></span>{$val2['text']}
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>

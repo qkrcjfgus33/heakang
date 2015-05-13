@@ -1,0 +1,8 @@
+<query id="deleteHistory" action="delete">
+    <tables>
+        <table name="historys" />
+    </tables>
+    <conditions>
+        <condition operation="equal" column="history_srl" var="history_srl" filter="number" notnull="notnull" />
+    </conditions>
+</query>

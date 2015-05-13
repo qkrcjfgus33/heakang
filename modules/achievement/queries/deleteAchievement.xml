@@ -1,0 +1,8 @@
+<query id="deleteachievement" action="delete">
+    <tables>
+        <table name="achievement" />
+    </tables>
+    <conditions>
+        <condition operation="equal" column="achievement_srl" var="achievement_srl" filter="number" notnull="notnull" />
+    </conditions>
+</query>

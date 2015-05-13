@@ -1,0 +1,52 @@
+<script>
+	jQuery(function($){
+		console.log('test')
+		$('tr[href]').on('click', function(){
+			location.href = $(this).attr('href');
+		})
+	})
+</script>
+
+
+<!-- 목록 -->
+<table border="0" class="achievementTable">
+	<thead>
+		<tr>
+			<th>{$lang->no}</th>
+			<th>{$lang->achieve_class_title}</th>
+			<th>{$lang->achievement_title}</th>
+			<th>{$lang->achievement_date}</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	<!--@foreach($achievement_list as $no => $achievement_info)-->
+		<tr href="{getUrl('achievement_srl', $achievement_info->achievement_srl,'act','dispAchievementContentView')}">
+			<td>{$no}</td>
+			<td>{$achievement_info->achieve_class_title}</td>
+			<td>{$achievement_info->achievement_title}</td>
+			<td>{$achievement_info->achievement_start_date} - {$achievement_info->achievement_end_date}</td>
+		</tr>
+	<!--@end-->
+	</tbody>
+</table>
+
+
+<!-- 버튼 -->
+<div class="btn" cond="$grant->write">
+	<a href="{getUrl('','mid',$mid)}" class="button green" title="{$lang->cmd_list}"><span>{$lang->cmd_list}</span></a>
+	<a href="{getUrl('act','dispAchievementContentWrite', 'achievement_new', 'true')}" class="button red" title="{$lang->cmd_input}"><span>{$lang->cmd_input}</span></a>
+</div>
+
+<!-- 페이지 네비게이션 -->
+<div class="pagination a1">
+    <a href="{getUrl('page','','module_srl','')}" class="prevEnd">{$lang->first_page}</a> 
+    <!--@while($page_no = $page_navigation->getNextPage())-->
+        <!--@if($page == $page_no)-->
+            <strong>{$page_no}</strong> 
+        <!--@else-->
+            <a href="{getUrl('page',$page_no,'module_srl','')}">{$page_no}</a> 
+        <!--@end-->
+    <!--@end-->
+    <a href="{getUrl('page',$page_navigation->last_page,'module_srl','')}" class="nextEnd">{$lang->last_page}</a>
+</div>

@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+.achievement_content {background: #FFF;}
+.achievement_content .achievementTable {width: 100%; margin: 0; padding: 0; border-spacing: 0px; border-collapse:collapse;  }
+.achievement_content .achievementTable thead{
+	border-top: 2px solid #9BAED2;
+	border-bottom: 2px solid #9BAED2;
+}
+.achievement_content .achievementTable th {
+	padding: 5px;
+	font-weight: bold;
+	width: 150px;
+	height: 20px;
+	line-height: 20px;
+	padding-right: 10px;
+	border-bottom: 1px solid #CCC;
+}
+.achievement_content .achievementTable td {
+	padding: 5px;
+	background: #FFF;
+	padding-left: 10px;
+	text-align: center;
+	border-bottom: 1px solid #CCC;
+}
+.achievement_content .achievementTable tr[href]{
+	cursor: pointer;
+  	-webkit-transition: font-weight,color .5s;
+  	transition:  font-weight,color .5s;
+}
+.achievement_content .achievementTable tr[href]:hover{
+	font-weight: bolder;
+	color: rgb(35, 145, 182);
+	-webkit-transition:  font-weight,color .5s;
+	transition:  font-weight,color .5s;
+}
+
+.achievement_content .center {text-align: center;}
+.achievement_content .left {text-align: left !important;}
+.achievement_content .right {text-align: right !important;}
+
+.achievement_content .btn {padding:10px 0;}

@@ -1,0 +1,9 @@
+<!--@foreach($oAchivementItemList as $val)-->
+{@ $photo_src = $val->achieve_photo_list[0]->uploaded_filename}
+    <a href="{getURL('','mid', $oAchivementMid, 'act','dispAchievementContentView','achievement_srl',$val->achievement_srl,'module_srl', $oAchivementSrl)}">
+    <li class="post">
+        <img src="{$photo_src}"/>
+        <div class="title">{$val->achievement_title}</div>
+    </li>
+    </a>
+<!--@end-->

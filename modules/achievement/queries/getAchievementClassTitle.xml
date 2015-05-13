@@ -1,0 +1,11 @@
+<query id="getAchievementClassTitle" action="select">
+    <tables>
+        <table name="achieve_class" />
+    </tables>
+    <columns>
+        <column name="class_title" />
+    </columns>
+    <conditions>
+        <condition operation="equal" column="achievement_class_srl" var="achievement_class_srl" />
+    </conditions>
+</query>

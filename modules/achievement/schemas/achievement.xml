@@ -1,0 +1,11 @@
+<table name="achievement">
+    <column name="achievement_srl" type="number" size="11" notnull="notnull" primary_key="primary_key" />
+    <column name="module_srl" type="number" size="11" default="0" notnull="notnull" index="idx_module_srl" />
+    <column name="achievement_class_srl" type="number" size="11" default="0" notnull="notnull" index="idx_achievement_class_srl" />
+    <column name="achievement_title" type="varchar" size="40" />
+	<column name="achievement_owner" type="varchar" size="40" />
+	<column name="achievement_woncheongsa" type="varchar" size="40" />
+	<column name="achievement_position" type="varchar" size="40" />
+	<column name="achievement_start_date" type="date" />
+	<column name="achievement_end_date" type="date" />
+</table>

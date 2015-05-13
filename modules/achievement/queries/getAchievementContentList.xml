@@ -1,0 +1,22 @@
+<query id="getAchievementContentList" action="select">
+    <tables>
+        <table name="achievement" />
+    </tables>
+    <columns>
+        <column name="achievement_srl" />
+        <column name="achievement_class_srl" />
+        <column name="achievement_title" />
+        <column name="achievement_start_date" />
+        <column name="achievement_end_date" />
+
+    </columns>
+    <conditions>
+        <condition operation="equal" column="module_srl" var="module_srl" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="achievement_srl" order="desc" />
+        <list_count var="list_count" default="20" />
+        <page_count var="page_count" default="10" />
+        <page var="page" default="1" />
+    </navigation>
+</query>

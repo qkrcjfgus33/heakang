@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="0.2">
+    <title xml:lang="ko">history</title>
+    <description xml:lang="ko">연혁 페이지를 생성</description>
+    <version>1.0</version>
+    <date>2015-03-31</date>
+    <category>service</category>
+
+    <author email_address="qkrcjfgus3@gmail.com">
+        <name xml:lang="ko">vomvoru</name>
+    </author>
+</module>

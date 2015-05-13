@@ -1,0 +1,45 @@
+<style>
+	.news-container{
+		padding: 20px 10px;
+	}
+
+	.news-container header{
+		border-bottom: rgb(33, 150, 190) 3px solid;
+		height: 25px;
+	}
+
+	.news-container header .title{
+		font-family: sans-serif;
+		font-weight: bold;
+		font-size: 15px;
+		padding-left: 10px;
+	}
+
+	.news-container header .more{
+		text-decoration: none;
+		float: right;
+		background-color: rgb(33,150,190);
+		margin: 0px;
+		padding: 0px;
+		width: 80px;
+		height: 100%;
+		line-height: 25px;
+		text-align: center;
+		font-weight: bold;
+		color: white;
+	}
+
+	.news-container header .more:hover{
+		font-size: 95%;
+		-webkit-transition: all .1s; /* Safari 3.1 to 6.0 */
+		transition: all .1s;
+	}
+</style>
+
+<section class="news-container">
+	<header>
+		<span class="title">NEWS</span>
+		<a href="" class="more">more +</a>
+	</header>
+	<include target="news-posts.html" />
+</section>
