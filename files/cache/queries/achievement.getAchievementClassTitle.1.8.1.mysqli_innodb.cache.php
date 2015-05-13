@@ -4,11 +4,11 @@ $query->setQueryId("getAchievementClassTitle");
 $query->setAction("select");
 $query->setPriority("");
 if(isset($args->achievement_class_srl)) {
-${'achievement_class_srl6_argument'} = new ConditionArgument('achievement_class_srl', $args->achievement_class_srl, 'equal');
-${'achievement_class_srl6_argument'}->createConditionValue();
-if(!${'achievement_class_srl6_argument'}->isValid()) return ${'achievement_class_srl6_argument'}->getErrorMessage();
+${'achievement_class_srl22_argument'} = new ConditionArgument('achievement_class_srl', $args->achievement_class_srl, 'equal');
+${'achievement_class_srl22_argument'}->createConditionValue();
+if(!${'achievement_class_srl22_argument'}->isValid()) return ${'achievement_class_srl22_argument'}->getErrorMessage();
 } else
-${'achievement_class_srl6_argument'} = NULL;if(${'achievement_class_srl6_argument'} !== null) ${'achievement_class_srl6_argument'}->setColumnType('number');
+${'achievement_class_srl22_argument'} = NULL;if(${'achievement_class_srl22_argument'} !== null) ${'achievement_class_srl22_argument'}->setColumnType('number');
 
 $query->setColumns(array(
 new SelectExpression('`class_title`')
@@ -18,7 +18,7 @@ new Table('`xe_achieve_class`', '`achieve_class`')
 ));
 $query->setConditions(array(
 new ConditionGroup(array(
-new ConditionWithArgument('`achievement_class_srl`',$achievement_class_srl6_argument,"equal")))
+new ConditionWithArgument('`achievement_class_srl`',$achievement_class_srl22_argument,"equal")))
 ));
 $query->setGroups(array());
 $query->setOrder(array());

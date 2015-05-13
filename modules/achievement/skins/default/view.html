@@ -68,11 +68,10 @@
 
 <!-- 버튼 -->
 <div class="btn" cond="$grant->write">
-	<!--
-	<a cond="$grant->write" href="{getUrl('act','dispAchievementContentWrite','achievement_srl',$achievement_info->achievement_srl, 'achievement_new', 'false')}" class="button red" title="{$lang->cmd_modify}"><span>{$lang->cmd_modify}</span></a>
--->
-<!--수정 버튼 문제있어서 삭제-->
+
 	<a cond="$grant->delete" href="{getUrl('act','dispAchievementContentDelete','achievement_srl', $achievement_info->achievement_srl,'achievement_title',$achievement_info->achievement_title)}" class="button black" title="{$lang->cmd_delete}"><span>{$lang->cmd_delete}</span></a>
+
+	<a cond="$grant->write" href="{getUrl('act','dispAchievementContentWrite','achievement_srl',$achievement_info->achievement_srl, 'achievement_new', 'false')}" class="button red" title="{$lang->cmd_modify}"><span>{$lang->cmd_modify}</span></a>
 </div>
 
 <h2>LIST</h2>

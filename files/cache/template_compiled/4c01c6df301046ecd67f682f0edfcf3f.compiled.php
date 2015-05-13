@@ -60,11 +60,8 @@
 </table>
 <!-- 버튼 -->
 <?php if($__Context->grant->write){ ?><div class="btn">
-	<!--
-	<?php if($__Context->grant->write){ ?><a href="<?php echo getUrl('act','dispAchievementContentWrite','achievement_srl',$__Context->achievement_info->achievement_srl, 'achievement_new', 'false') ?>" class="button red" title="<?php echo $__Context->lang->cmd_modify ?>"><span><?php echo $__Context->lang->cmd_modify ?></span></a><?php } ?>
--->
-<!--수정 버튼 문제있어서 삭제-->
 	<?php if($__Context->grant->delete){ ?><a href="<?php echo getUrl('act','dispAchievementContentDelete','achievement_srl', $__Context->achievement_info->achievement_srl,'achievement_title',$__Context->achievement_info->achievement_title) ?>" class="button black" title="<?php echo $__Context->lang->cmd_delete ?>"><span><?php echo $__Context->lang->cmd_delete ?></span></a><?php } ?>
+	<?php if($__Context->grant->write){ ?><a href="<?php echo getUrl('act','dispAchievementContentWrite','achievement_srl',$__Context->achievement_info->achievement_srl, 'achievement_new', 'false') ?>" class="button red" title="<?php echo $__Context->lang->cmd_modify ?>"><span><?php echo $__Context->lang->cmd_modify ?></span></a><?php } ?>
 </div><?php } ?>
 <h2>LIST</h2>
 <?php $__tpl=TemplateHandler::getInstance();echo $__tpl->compile('modules/achievement/skins/default','list.html') ?>

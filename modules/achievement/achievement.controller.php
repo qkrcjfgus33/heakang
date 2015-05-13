@@ -38,12 +38,24 @@
 
 			//} else {
 				$output = executeQuery("achievement.insertAchievement", $obj);
-                debugPrint($obj);
                 $this->setMessage($output->message);
 
 			//}
  
 		}
+
+        function procAchievementContentUpdate() {
+
+            // request 값을 모두 받음
+            $obj = Context::getRequestVars();
+
+            // 현재 모듈번호 확인
+            $obj->module_srl = Context::get('module_srl');
+
+            $output = executeQuery("achievement.updateAchievement", $obj);
+            $this->setMessage($output->message);
+ 
+        }
 
         /**
          * @brief achievement 삭제

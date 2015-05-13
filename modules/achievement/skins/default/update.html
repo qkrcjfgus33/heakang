@@ -1,17 +1,53 @@
+<script type="text/javascript">
+	jQuery(function($){
+		$('#loading').hide();
+		$('#writ_form #submit').on('click', function(){
+
+			$('#writ_form #submit').attr('disabled', true);
+			$('#loading').show();
+
+			var params = {};
+
+			$('#writ_form input[name]').add('#writ_form select[name]').each(function(){
+				params[$(this).attr('name')] = $(this).val();
+			});
+
+			console.log(params);
+
+			$.exec_json('achievement.procAchievementContentUpdate', params, complete);
+		});
+
+		function complete(data){
+			$('#writ_form #submit').attr('disabled', false);
+			$('#loading').hide();
+			if(data.message == 'success'){
+				alert('등록되었습니다.');
+				var url = current_url.setQuery('act','dispAchievementContentList').setQuery('achievement_srl','');
+				    location.href = url;
+			}else{
+				alert('등록실패.');
+				$('#writ_form #submit').attr('disabled', false);
+				$('#loading').hide();
+			}
+		}
+
+		$('#writ_form input[type=date]')
+			.datetimepicker({
+				lang:'ko',
+				timepicker:false,
+				format:'Y-m-d'
+			});
+
+	});
+</script>
 <!--#include("_header.html")-->
 
-<h2>achievement Update</h2>
-
-<form action="./" method="post" onsubmit="return procFilter(this, content_insert);">
+<h2>주요공사 실적 수정</h2>
+<form action="./" method="post" id="writ_form">
 <input type="hidden" name="module_srl" value="{$module_srl}" />
-<input type="hidden" name="regdate" value="{date("Ymd")}" />
-<input type="hidden" name="achievement_srl" value="{$achievement_srl}" />
+<input type="hidden" name="achievement_srl" value="{$achievement_info->achievement_srl}" />
 
 <table border="0" class="achievementTable">
-	<tr>
-		<th>{$achievement_srl} achievement</th>
-		<th>{$lang->achievement_infomation}</th>
-	</tr>
 	<tr>
 		<th>{$lang->achievement_title}</th>
 		<td class="left"><input type="text" name="achievement_title" value="{$achievement_info->achievement_title}" size="40" /></td>
@@ -59,9 +95,17 @@
 </table>
 
 <div class="btn">
-	<span class="button red strong"><input type="submit" value="{$lang->cmd_input}"/></span> 
+	<span class="button"><input type="button" value="{$lang->cmd_back}" onclick="history.back(); return false;" /></span> 
+	<span class="button red strong">
+		<input id="submit" type="button" value="{$lang->cmd_input}"/>
+	</span> 
 </div>
-
+<span id="loading">DB에 등록 중 입니다.
+	<img src="/modules/achievement/skins/default/loading.gif" style="
+    width: 30px;
+    vertical-align: middle;
+">
+</span>
 </form>
 
 <!--#include("_footer.html")-->

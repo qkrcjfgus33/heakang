@@ -34,6 +34,7 @@
 		<action name="dispAchievementMessage" type="view" />
 
 		<action name="procAchievementContentWrite" type="controller" />
+        <action name="procAchievementContentUpdate" type="controller" />
 		<action name="procAchievementContentDelete" type="controller" />
 
 		<action name="dispAchievementAdminList" type="view" standalone="true" admin_index="true" />

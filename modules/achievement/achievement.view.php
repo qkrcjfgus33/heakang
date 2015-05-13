@@ -140,6 +140,7 @@
 
 			   // 변경된 $output을 $achievement_info 변수에 set
 			   Context::set('achievement_info', $output->data[0]);
+               Context::set('achievement_srl', $achievement_srl);
 
 			// new
 			} else {
@@ -166,7 +167,7 @@
             $option->content_key_name = 'content';
              
             // 에디터 HTML 정하기
-            $editor = $oEditorModel->getEditor($upload_target_srl, $option);
+            $editor = $oEditorModel->getEditor($achievement_srl, $option);
             Context::set('editor', $editor);
 
              // 내용 작성시 검증을 위해 사용되는 XmlJSFilter  
@@ -178,11 +179,11 @@
             Context::addJsFile($this->module_path.'tpl/js/jquery.datetimepicker.js');
 
 			// 내용 작성화면 템플릿 파일 지정 write.html
-            //if($achievement_new == 'false') {
-            //    $this->setTemplateFile('update');
-            //}else{
+            if($achievement_new == 'false') {
+                $this->setTemplateFile('update');
+            }else{
                 $this->setTemplateFile('write');
-            //}
+            }
 		}
 
         /**
