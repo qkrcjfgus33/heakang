@@ -21,6 +21,8 @@
 	padding-left: 10px;
 	text-align: center;
 	border-bottom: 1px solid #CCC;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 .achievement_content .achievementTable tr[href]{
 	cursor: pointer;
