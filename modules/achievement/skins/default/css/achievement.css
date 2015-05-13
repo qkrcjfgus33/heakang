@@ -24,6 +24,7 @@
 }
 .achievement_content .achievementTable tr[href]{
 	cursor: pointer;
+	height: 40px;
   	-webkit-transition: font-weight,color .5s;
   	transition:  font-weight,color .5s;
 }

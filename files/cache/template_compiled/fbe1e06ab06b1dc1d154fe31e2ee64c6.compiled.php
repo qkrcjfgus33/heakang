@@ -10,19 +10,19 @@
 <table border="0" class="achievementTable">
 	<thead>
 		<tr>
-			<th><?php echo $__Context->lang->no ?></th>
-			<th><?php echo $__Context->lang->achieve_class_title ?></th>
-			<th><?php echo $__Context->lang->achievement_title ?></th>
-			<th><?php echo $__Context->lang->achievement_date ?></th>
+			<th style="width:20%"><?php echo $__Context->lang->no ?></th>
+			<th style="width:20%"><?php echo $__Context->lang->achieve_class_title ?></th>
+			<th style="width:30%"><?php echo $__Context->lang->achievement_title ?></th>
+			<th style="width:30%"><?php echo $__Context->lang->achievement_date ?></th>
 		</tr>
 	</thead>
 	<tbody>
 	<?php if($__Context->achievement_list&&count($__Context->achievement_list))foreach($__Context->achievement_list as $__Context->no => $__Context->achievement_info){ ?>
 		<tr href="<?php echo getUrl('achievement_srl', $__Context->achievement_info->achievement_srl,'act','dispAchievementContentView') ?>">
-			<td><?php echo $__Context->no ?></td>
-			<td><?php echo $__Context->achievement_info->achieve_class_title ?></td>
-			<td><?php echo $__Context->achievement_info->achievement_title ?></td>
-			<td><?php echo $__Context->achievement_info->achievement_start_date ?> - <?php echo $__Context->achievement_info->achievement_end_date ?></td>
+			<td style="width:20%"><?php echo $__Context->no ?></td>
+			<td style="width:20%"><?php echo $__Context->achievement_info->achieve_class_title ?></td>
+			<td style="width:30%"><?php echo $__Context->achievement_info->achievement_title ?></td>
+			<td style="width:30%"><?php echo $__Context->achievement_info->achievement_start_date ?> - <?php echo $__Context->achievement_info->achievement_end_date ?></td>
 		</tr>
 	<?php } ?>
 	</tbody>

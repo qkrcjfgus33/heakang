@@ -4,27 +4,27 @@ $query->setQueryId("getAchievementContentList");
 $query->setAction("select");
 $query->setPriority("");
 if(isset($args->module_srl)) {
-${'module_srl1_argument'} = new ConditionArgument('module_srl', $args->module_srl, 'equal');
-${'module_srl1_argument'}->createConditionValue();
-if(!${'module_srl1_argument'}->isValid()) return ${'module_srl1_argument'}->getErrorMessage();
+${'module_srl21_argument'} = new ConditionArgument('module_srl', $args->module_srl, 'equal');
+${'module_srl21_argument'}->createConditionValue();
+if(!${'module_srl21_argument'}->isValid()) return ${'module_srl21_argument'}->getErrorMessage();
 } else
-${'module_srl1_argument'} = NULL;if(${'module_srl1_argument'} !== null) ${'module_srl1_argument'}->setColumnType('number');
+${'module_srl21_argument'} = NULL;if(${'module_srl21_argument'} !== null) ${'module_srl21_argument'}->setColumnType('number');
 
-${'page3_argument'} = new Argument('page', $args->{'page'});
-${'page3_argument'}->ensureDefaultValue('1');
-if(!${'page3_argument'}->isValid()) return ${'page3_argument'}->getErrorMessage();
+${'page23_argument'} = new Argument('page', $args->{'page'});
+${'page23_argument'}->ensureDefaultValue('1');
+if(!${'page23_argument'}->isValid()) return ${'page23_argument'}->getErrorMessage();
 
-${'page_count4_argument'} = new Argument('page_count', $args->{'page_count'});
-${'page_count4_argument'}->ensureDefaultValue('10');
-if(!${'page_count4_argument'}->isValid()) return ${'page_count4_argument'}->getErrorMessage();
+${'page_count24_argument'} = new Argument('page_count', $args->{'page_count'});
+${'page_count24_argument'}->ensureDefaultValue('10');
+if(!${'page_count24_argument'}->isValid()) return ${'page_count24_argument'}->getErrorMessage();
 
-${'list_count5_argument'} = new Argument('list_count', $args->{'list_count'});
-${'list_count5_argument'}->ensureDefaultValue('20');
-if(!${'list_count5_argument'}->isValid()) return ${'list_count5_argument'}->getErrorMessage();
+${'list_count25_argument'} = new Argument('list_count', $args->{'list_count'});
+${'list_count25_argument'}->ensureDefaultValue('20');
+if(!${'list_count25_argument'}->isValid()) return ${'list_count25_argument'}->getErrorMessage();
 
-${'sort_index2_argument'} = new Argument('sort_index', $args->{'sort_index'});
-${'sort_index2_argument'}->ensureDefaultValue('achievement_srl');
-if(!${'sort_index2_argument'}->isValid()) return ${'sort_index2_argument'}->getErrorMessage();
+${'sort_index22_argument'} = new Argument('sort_index', $args->{'sort_index'});
+${'sort_index22_argument'}->ensureDefaultValue('achievement_srl');
+if(!${'sort_index22_argument'}->isValid()) return ${'sort_index22_argument'}->getErrorMessage();
 
 $query->setColumns(array(
 new SelectExpression('`achievement_srl`')
@@ -38,11 +38,11 @@ new Table('`xe_achievement`', '`achievement`')
 ));
 $query->setConditions(array(
 new ConditionGroup(array(
-new ConditionWithArgument('`module_srl`',$module_srl1_argument,"equal")))
+new ConditionWithArgument('`module_srl`',$module_srl21_argument,"equal")))
 ));
 $query->setGroups(array());
 $query->setOrder(array(
-new OrderByColumn(${'sort_index2_argument'}, "desc")
+new OrderByColumn(${'sort_index22_argument'}, "desc")
 ));
-$query->setLimit(new Limit(${'list_count5_argument'}, ${'page3_argument'}, ${'page_count4_argument'}));
+$query->setLimit(new Limit(${'list_count25_argument'}, ${'page23_argument'}, ${'page_count24_argument'}));
 return $query; ?>

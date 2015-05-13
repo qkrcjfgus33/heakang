@@ -12,20 +12,20 @@
 <table border="0" class="achievementTable">
 	<thead>
 		<tr>
-			<th>{$lang->no}</th>
-			<th>{$lang->achieve_class_title}</th>
-			<th>{$lang->achievement_title}</th>
-			<th>{$lang->achievement_date}</th>
+			<th style="width:20%">{$lang->no}</th>
+			<th style="width:20%">{$lang->achieve_class_title}</th>
+			<th style="width:30%">{$lang->achievement_title}</th>
+			<th style="width:30%">{$lang->achievement_date}</th>
 		</tr>
 	</thead>
 
 	<tbody>
 	<!--@foreach($achievement_list as $no => $achievement_info)-->
 		<tr href="{getUrl('achievement_srl', $achievement_info->achievement_srl,'act','dispAchievementContentView')}">
-			<td>{$no}</td>
-			<td>{$achievement_info->achieve_class_title}</td>
-			<td>{$achievement_info->achievement_title}</td>
-			<td>{$achievement_info->achievement_start_date} - {$achievement_info->achievement_end_date}</td>
+			<td style="width:20%">{$no}</td>
+			<td style="width:20%">{$achievement_info->achieve_class_title}</td>
+			<td style="width:30%">{$achievement_info->achievement_title}</td>
+			<td style="width:30%">{$achievement_info->achievement_start_date} - {$achievement_info->achievement_end_date}</td>
 		</tr>
 	<!--@end-->
 	</tbody>
